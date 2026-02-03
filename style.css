@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ascundem cursorul normal */
+body {
+    cursor: none;
+}
+
+/* LOADING */
+body.loading {
+    background: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-box {
+    text-align: center;
+    animation: fadeIn 2s forwards;
+}
+
+.logo-gif {
+    width: 220px;
+    margin-bottom: 25px;
+}
+
+/* SITE */
+body.main {
+    background: black;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* background animat */
+body.main::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #111 0%, #000 70%);
+    animation: bgMove 40s linear infinite;
+    z-index: -1;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: fadeIn 2s forwards;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+    opacity: 0.85;
+}
+
+.join {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    border: 2px solid #7289da;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.join:hover {
+    background: #7289da;
+    transform: scale(1.08);
+}
+
+/* CURSOR PUNCT */
+.dot-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ANIMATII */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bgMove {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
